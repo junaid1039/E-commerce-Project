@@ -1,0 +1,19 @@
+{"slides": [
+    {
+        "src": "https://picsum.photos/2000/500",
+        "alt": "image 1"
+    },
+    {
+        "src": "https://picsum.photos/2000/503",
+        "alt": "image 2"
+    },
+    {
+        "src": "https://picsum.photos/2000/502",
+        "alt": "image 3"
+    },
+    {
+        "src": "https://picsum.photos/2000/501",
+        "alt": "image 4"
+    }
+]
+}

@@ -1,0 +1,10 @@
+.p-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    color: white;
+    font-size: 11px;
+    padding: 5px 0 5px 0;
+
+}

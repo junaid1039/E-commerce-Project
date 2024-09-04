@@ -1,0 +1,194 @@
+
+.heading{
+    width: 100%;
+    background-color: #ffffff;
+}
+.heading p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+hr{
+    height: 2px;
+    background-color: rgb(90, 90, 90);
+    width: 100%;
+    margin-top: -5px;
+}
+.cartitem{
+    display: flex;
+    width: 100%;
+    margin: 80px 0 80px 0;
+    display: flex;
+    justify-content: center;
+    
+}
+.sub-cartitem{
+    width: 90%;
+    display: flex;
+}
+.main-format{
+    display: flex;
+}
+.caritem-cart{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.main-format{
+    display: flex;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.cartitem-format{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.cartitem-format img{
+    height: 80px;
+    width: 60px;
+}
+.cartitem-format svg{
+    font-size: 15px;
+    margin-right: 10px;
+}
+.name{
+    font-size: 16px;
+    width: 30%;
+    font-weight: bold;
+}
+.quantity-controls{
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+}
+h5{
+    margin: 0;
+    margin-bottom: 5px;
+}
+.sub-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.quantity-controls svg{
+    border: 1px solid rgb(145, 145, 145);
+    height: 20px;
+    width: 20px;
+}
+
+.cartitem-down{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: end;
+}
+.sub-down{
+    width: 90%;
+}
+.cartitem-total{
+    flex: 1;
+    display: flex;
+    width: inherit;
+    flex-direction: column;
+    gap: 20px;
+}
+.ct-item{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+.cartitem-total button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 58px;
+    outline: none;
+    border: none;
+    background: #ff5a5a;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    
+    gap: 12px;
+    svg{
+        font-size: 20px;
+    }
+}
+.ct-promocode{
+   width: inherit;
+    font-size: 16px;
+    font-weight: 500;
+}
+.ct-promocode p{
+    margin-top: 0;
+    color: #555;
+}
+.ct-promobox{
+    display: flex;
+    margin-top: 15px;
+    height: 50px;
+    background-color: #eaeaea;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+.ct-promobox input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    height: 50px;
+    
+}
+.ct-promobox button{
+    width: 130px;
+    height: 50px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 748px){
+   .sub-cartitem{
+    flex-direction: column;
+   } 
+   .caritem-cart{
+    width: 100%;
+   }
+   .cartitem-down{
+    width: 100%;
+    align-items: center;
+    margin-top: 50px;
+   }
+   .sub-down{
+    width: 100%;
+   }
+   .cartitem-total button {
+    width: 100%;
+   }
+   .name{
+    font-size: 13px;
+    font-weight: 500;
+   }
+   .sub-1{
+    gap:5px;
+   }
+   .quantity-controls svg{
+    height: 15px;
+    width: 15px;
+   }
+   .cartitem-format svg {
+    margin: 0;
+   }
+}

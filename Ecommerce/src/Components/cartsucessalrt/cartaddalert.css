@@ -1,0 +1,31 @@
+.alertmain{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+.custom-alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 10px;
+    width: 30%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 14px;
+    border-radius: 50px;
+  }
+  
+  .alert-icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  @media (max-width: 500px){
+    .custom-alert {
+    width: 80%;
+  }
+  
+}
+  
