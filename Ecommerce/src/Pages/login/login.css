@@ -67,6 +67,13 @@
     cursor: pointer;
 
 }
+.logout-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin: 50px 0px;
+
+}
 
 .loginsignup-agree {
     display: flex;
@@ -76,6 +83,39 @@
     color: #5c5c5c;
     font-size: 14px;
     font-weight: 500;
+}
+
+/*logout css start from there*/
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 100px 0px;
+}
+.sub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    height: 25%;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgb(248, 248, 248);
+}
+.sub svg{
+    font-size: 100px;
+}
+.sub button{
+    height: 40px;
+    width: 80%;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    background-color: rgb(255, 111, 92);
+    color: white;
 }
 
 @media (max-width: 500px) {

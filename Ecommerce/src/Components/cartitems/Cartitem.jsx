@@ -37,7 +37,7 @@ export const Cartitem = () => {
                                                 <div className="quantity-controls">
                                                     <h5>Quantity</h5>
                                                     <div className="sub-1">
-                                                        <AiOutlineMinus onClick={() => decreaseCartQuantity(e.id)} />
+                                                        <AiOutlineMinus onClick={() => removeFromcart(e.id)} />
                                                         <span className='cartitem-quantity'>{cartItems[e.id]}</span>
                                                         <AiOutlinePlus onClick={() => addToCart(e.id)} />
                                                     </div>

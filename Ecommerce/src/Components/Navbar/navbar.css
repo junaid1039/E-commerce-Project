@@ -113,6 +113,7 @@ a:active{
     background-color: red;
     color: white;
     margin-left: -10px;
+    font-size: 12px;
 }
 
 /* Responsive styles for max-width 768px */
