@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const multer = require('multer');
 const path = require('path');
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
 
 app.use(express.json());
 app.use(cors());
@@ -130,6 +131,96 @@ app.get('/allproducts', async (req,res)=>{
     console.log("All products fetched");
     res.send(products);
 })
+
+// creating schema for user model
+
+const Users = mongoose.model('User',{
+    name:{
+        type:String,
+    },
+    email:{
+        type:String,
+        required:true,
+    },
+    password:{
+        type:String,
+    },
+    cartData:{
+        type:Object,
+    },
+    date:{
+        type:Date,
+        default:Date.now,
+    }
+});
+
+//creating endpoint for registering user
+
+app.post('/signup', async (req, res) => {
+    try {
+        // Check if the user already exists
+        let check = await Users.findOne({ email: req.body.email });
+        if (check) {
+            return res.status(400).json({ success: false, errors: 'User Already Exists' });
+        }
+
+        // Initialize an empty cart
+        let cart = {};
+        for (let i = 0; i < 300; i++) {
+            cart[i] = 0;
+        }
+
+        // Create new user without password hashing
+        const user = new Users({
+            name: req.body.username,
+            email: req.body.email,
+            password: req.body.password, // No hashing applied here
+            cartData: cart,
+        });
+
+        // Save the user in the database
+        await user.save();
+
+        // Generate JWT token
+        const data = {
+            user: {
+                id: user.id
+            }
+        };
+        const token = jwt.sign(data, 'secret_ecom');
+
+        // Send response with token
+        res.json({ success: true, token });
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+// creating sign in endpoint
+
+app.post('/login',async (req,res)=>{
+ let user = await Users.findOne({email:req.body.email});
+ if(user){
+    const passCompare = req.body.password === user.password;
+    if(passCompare){
+        const data={
+            user:{
+                id:user.id
+            }
+        }
+        const token = jwt.sign(data,'secret_ecom');
+        res.json({success:true,token});
+    }
+    else{
+        res.json({success:false,errors:'Wrong Password'});
+    }
+ }
+ else{
+    res.json({success:false,errors:"Wrong Email"});
+ }
+})
+
 
 app.listen(port, (error) => {
     if (!error) {
